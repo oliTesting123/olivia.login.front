@@ -1,0 +1,30 @@
+<div class="container" style="padding: 18px;">
+    <div *ngIf="user">
+        <h2>Editar usuario</h2>
+      </div>
+      <div *ngIf="!user">
+        <h2>Crear Usuario</h2>
+      </div>
+    <form (ngSubmit)="save()" #myForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" [(ngModel)]="query.name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" name="last_name" [(ngModel)]="query.last_name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="query.email" class="form-control" required>
+        </div>
+        <br>
+        <div *ngIf="user">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+          </div>
+          <div *ngIf="!user">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+      </form>
+      <br>
+</div>
