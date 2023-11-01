@@ -37,16 +37,12 @@ export class EditUserComponent implements OnInit {
   }
 
   save() {
-    // Realizar la solicitud POST con los datos del formulario
     this.usersService.putUser(this.query).subscribe(
       (response) => {
-
         this.toaster.success(this.translate.instant('Datos guardados!'));
-        // Puedes realizar otras acciones aquí después de la solicitud exitosa.
       },
       (error) => {
         this.toaster.error(this.translate.instant('Ha ocurrido un error!'));
-        // Manejo de errores
       }
     );
   }

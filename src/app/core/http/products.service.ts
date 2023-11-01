@@ -9,11 +9,11 @@ import { HttpService } from './http.service';
 @Injectable({
     providedIn: 'root'
   })
-  export class UsersService extends HttpService {
+  export class ProductsService extends HttpService {
   
     constructor(http: HttpClient) {
       super(http);
-      this.path = 'api/users';
+      this.path = 'api/products';
     }
 
     public getData() {
@@ -25,7 +25,7 @@ import { HttpService } from './http.service';
         );
     }
 
-    postUser(data: any): Observable<any> {
+    postProduct(data: any): Observable<any> {
 
       return this.http.post(`${this.baseUrl}`, data).pipe(
         map((response: any) => {
@@ -34,7 +34,7 @@ import { HttpService } from './http.service';
       );
     }
 
-    putUser(data: any): Observable<any> {
+    putProduct(data: any): Observable<any> {
       return this.http.post(`${this.baseUrl}`, data).pipe(
         map((response: any) => {
           return response;
@@ -42,7 +42,7 @@ import { HttpService } from './http.service';
       );
     }
 
-    public deleteUser(id: number): Observable<any> {
+    public deleteProduct(id: number): Observable<any> {
       const url = `${this.baseUrl}/${id}`; // Reemplaza con la URL de tu API
       return this.http.delete(url);
     }
