@@ -11,7 +11,7 @@ export class HttpService {
 
   private _baseUrl: string;
   private _path: string;
-  // private _token: string;
+  private _token: string;
   // public storage: LocalStorageService;
   
   constructor(public http: HttpClient) {
@@ -31,19 +31,19 @@ export class HttpService {
     }
   }
 
-  // set token(token: string) {
-  //   this._token = token;
-  // }
+  set token(token: string) {
+    this._token = token;
+  }
 
-  // get token(): string {
-  //   return localStorage.getItem('jwt');
-  // }
+  get token(): string {
+    return localStorage.getItem('jwt');
+  }
 
-  // get headers(): HttpHeaders {
-  //   const jwt_token = JSON.parse(this.token)['token'];
-  //   // const jwt_date = jwt_decode(jwt_token)['exp'];
+  get headers(): HttpHeaders {
+    const jwt_token = JSON.parse(this.token)['token'];
+    // const jwt_date = jwt_decode(jwt_token)['exp'];
     
-  //   return new HttpHeaders().set('Authorization', `Bearer ${jwt_token}`);
-  // }
+    return new HttpHeaders().set('Authorization', `Bearer ${jwt_token}`);
+  }
 
 }

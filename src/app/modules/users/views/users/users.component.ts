@@ -6,11 +6,11 @@ import { UsersService } from 'src/app/core/http';
 import { UserModel } from 'src/app/core/models';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class UsersComponent implements OnInit {
   users: UserModel[] = [];
   
   constructor(
@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
   }
 
   editUser(user: any) {
-    this.router.navigate(['/edit'], {state: {user: user}});
+    this.router.navigate(['/edit-user'], {state: {user: user}});
   }
 
   deleteUser(id: number) {

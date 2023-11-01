@@ -1,4 +1,5 @@
 <div class="container">
+  <app-nav></app-nav>
     <div class="text-center">
         <h4>Lista usuarios</h4>
     </div>
@@ -11,7 +12,6 @@
           <tr>
             <th scope="col">#ID</th>
             <th scope="col">Name</th>
-            <th scope="col">Last name</th>
             <th scope="col">email</th>
             <th scope="col">options</th>
           </tr>
@@ -20,7 +20,6 @@
           <tr *ngFor="let user of users">
             <th scope="row">{{ user.id }}</th>
             <td>{{ user.name }}</td>
-            <td>{{ user.last_name }}</td>
             <td>{{ user.email }}</td>
             <td>
               <p>
